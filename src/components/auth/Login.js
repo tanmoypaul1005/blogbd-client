@@ -65,7 +65,7 @@ const Login = () => {
                 <title>User Login</title>
                 <meta name='description' content='User login form' />
             </Helmet>
-            <div className="row">
+            <div className="row jj">
                 <div className="col-8">
                     <BgImage></BgImage>
                     <Toaster

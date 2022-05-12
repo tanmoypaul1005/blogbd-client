@@ -45,7 +45,7 @@ const Register = (props) => {
                 <title>User Register</title>
                 <meta name='description' content='User register form' />
             </Helmet>
-            <div className="row mt-80">
+            <div className="row">
                 <div className="col-8">
                     <BgImage></BgImage>
                     <Toaster
