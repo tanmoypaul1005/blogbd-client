@@ -8,7 +8,7 @@ const NavBar = () => {
 
 
 
-    const auth = useSelector((state) => state.auth);
+    const auth = localStorage.getItem('auth');
     const token = window.localStorage.getItem('token');
 
     const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const NavBar = () => {
         navigate('/register');
         dispatch({ type: authConstants.LOGOUT_SUCCESS })
     }
-    const Links = auth.user ?
+    const Links = auth ?
         <div className="navbar__right">
             <li ><NavLink to="/">Dashboard</NavLink></li>
             <li><NavLink to="/create">Create Post</NavLink></li>
