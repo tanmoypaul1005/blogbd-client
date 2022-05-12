@@ -27,7 +27,7 @@ function App() {
   // const myJSON = JSON.parse(auth);
 
   const auth = useSelector((state) => state.auth.user);
-  console.log(auth)
+  // console.log(auth)
 
   const dispatch = useDispatch();
   if (auth) {
