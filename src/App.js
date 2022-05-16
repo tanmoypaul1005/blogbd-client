@@ -22,11 +22,6 @@ import Footer from './components/Footer/Footer';
 
 
 function App() {
-  // const email = '';
-  // const auth = localStorage.getItem("user");
-
-  // const myJSON = JSON.parse(auth);
-
   const auth = useSelector((state) => state.auth.user);
   // console.log(auth)
 
@@ -43,7 +38,7 @@ function App() {
   useEffect(() => {
     dispatch(detail_post(id));
     dispatch(fetchDashboard());
-  }, [dispatch]);
+  });
 
 
   return (

@@ -5,10 +5,8 @@ import logo from '../images/logo.png'
 import { fetch_User_Post } from '../redux/AsyncAction/PostAction';
 import { authConstants } from '../redux/constants';
 const NavBar = () => {
-
-
-
-    const auth = localStorage.getItem('auth');
+    const auth = useSelector((state) => state.auth)
+    // const auth = localStorage.getItem('user');
     const token = window.localStorage.getItem('token');
 
     const dispatch = useDispatch();
@@ -19,7 +17,7 @@ const NavBar = () => {
         navigate('/register');
         dispatch({ type: authConstants.LOGOUT_SUCCESS })
     }
-    const Links = auth ?
+    const Links = token ?
         <div className="navbar__right">
             <li ><NavLink to="/">Dashboard</NavLink></li>
             <li><NavLink to="/create">Create Post</NavLink></li>
