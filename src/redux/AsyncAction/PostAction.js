@@ -37,7 +37,7 @@ export const fetch = (email) => {
     return async (dispatch) => {
         try {
             dispatch({ type: postConstants.GET_POST_REQUEST });
-            const res = await axiosIntance.post(' /user/post', { email });
+            const res = await axiosIntance.post('user/post', { email });
             // console.log("PostRes", res);
             const { post } = res.data;
             if (res.status === 200) {

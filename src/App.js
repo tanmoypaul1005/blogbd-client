@@ -38,7 +38,7 @@ function App() {
   useEffect(() => {
     dispatch(detail_post(id));
     dispatch(fetchDashboard());
-  });
+  }, [dispatch]);
 
 
   return (

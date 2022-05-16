@@ -17,7 +17,7 @@ const NavBar = () => {
         navigate('/register');
         dispatch({ type: authConstants.LOGOUT_SUCCESS })
     }
-    const Links = token ?
+    const Links = auth.user ?
         <div className="navbar__right">
             <li ><NavLink to="/">Dashboard</NavLink></li>
             <li><NavLink to="/create">Create Post</NavLink></li>
