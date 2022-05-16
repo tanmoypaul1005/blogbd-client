@@ -67,7 +67,7 @@ export const detail_post = (id) => {
                 dispatch({ type: postConstants.GET_POST_DETAIL_FAILURE });
             }
         } catch (error) {
-            console.log(error)
+            console.log(error);
 
         }
     }
