@@ -90,7 +90,7 @@ export const postComment = (commentData) => {
             if (res.status === 500) {
                 dispatch({ type: postConstants.GET_POST_DETAIL_FAILURE });
             }
-        } catch (error) { console.log(error) }
+        } catch (error) { console.log(error); }
     }
 }
 
