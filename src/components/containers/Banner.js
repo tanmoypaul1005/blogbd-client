@@ -1,10 +1,10 @@
 import React from 'react';
 import banner from '../../images/banner.png';
-
+import './Banner.css';
 const Banner = () => {
     return (
         <div>
-            <img style={{ padding: "4rem" }} src={banner} width="1340rem" height="460rem"></img>
+            <img className='image' src={banner} ></img>
         </div>
     );
 };

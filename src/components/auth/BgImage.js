@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './BgImage.css'
 const BgImage = () => {
     return (
         <div>

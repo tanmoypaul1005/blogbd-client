@@ -1,5 +1,4 @@
 import './App.css';
-import Home from './components/Home';
 import Register from './components/auth/Register';
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Login from './components/auth/Login';
@@ -42,7 +41,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className="app">
       <BrowserRouter>
         <NavBar></NavBar>
         <Routes>
@@ -51,8 +50,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/create" element={<PrivateRoute><Create /></PrivateRoute>} />
           <Route path="/profile" element={<PrivateRoute><MyProfile /></PrivateRoute>} />
-          <Route path="/" element={<PrivateRoute><DashBoard /></PrivateRoute>} />
-          <Route path="/details/:id" element={<PrivateRoute><Details /></PrivateRoute>} />
+          <Route path="/" element={<DashBoard />} />
+          <Route path="/details/:id" element={<Details />} />
           <Route path="/post/edit/:id" element={<PrivateRoute><Edit /></PrivateRoute>} />
           <Route path="/*" element={<NotFound></NotFound>} />
         </Routes>

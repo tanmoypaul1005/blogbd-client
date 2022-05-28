@@ -3,10 +3,8 @@ import Helmet from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
 import { postLogin } from '../../redux/AsyncAction/AuthAction';
 import BgImage from './BgImage';
-import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-
-
+import './auth.css'
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
@@ -65,19 +63,14 @@ const Login = () => {
                 <title>User Login</title>
                 <meta name='description' content='User login form' />
             </Helmet>
-            <div className="row">
-                <div className="col-8">
+
+            <div>
+                <div className="imagelog">
                     <BgImage></BgImage>
-                    <Toaster
-                        position='top-right'
-                        reverseOrder={false}
-                        toastOptions={{ style: { fontSize: '14px' } }}
-                    />
-
-
                 </div>
-                <div className="col-4">
-                    <div className="account">
+
+                <div className='log' >
+                    <div style={{ margin: '4rem' }}>
                         <div className="account__section">
                             <form onSubmit={UserLogin}>
                                 <div className="group"><h3 className="form-heading ">Login</h3></div>
@@ -102,16 +95,23 @@ const Login = () => {
                                     />
                                 </div>
 
-                                <div className="group"><input type="submit" name="" className="btn btn-default btn-block" value="Login" /></div>
+                                <div className="group">
+                                    <input type="submit"
+                                        style={{ backgroundColor: '#1a8917', color: 'white', fontSize: '15px' }}
+                                        name=""
+                                        className="btn btn-default btn-block"
+                                        value="Login"
+                                    />
+                                </div>
                             </form>
-                            {/* <div><img onClick={googlesingin} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1PJmT_THldF0n5APcmt9p10utgu6KSw4cH2fQ5Xhpw&s" width="50PX" /></div> */}
+
                         </div>
                     </div>
                 </div>
 
 
             </div>
-        </div >
+        </div>
     );
 };
 

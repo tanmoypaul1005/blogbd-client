@@ -1,0 +1,37 @@
+ @media only screen and (max-width: 1500px) {
+  .detail{
+    width: 100%;
+    height: 100%;
+}
+  } 
+
+   @media only screen and (max-width: 992px) {
+    .detail{
+      width: 100%;
+      height: 100%;
+  }
+  }
+
+ @media only screen and (max-width: 768px) {
+  .detail{
+    width: 770px;
+    height: 100%;
+}
+  } 
+
+
+  @media only screen and (max-width: 700px) {
+    .detail{
+      width: 760px;
+      height: 100%;
+  }
+  }
+
+
+  @media only screen and (max-width: 400px) {
+    .detail{
+      width: 620px;
+      height: 100%;
+  }
+  }
+
