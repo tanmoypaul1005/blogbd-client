@@ -16,7 +16,8 @@ const Create = () => {
         title: '',
         description: '',
         image: '',
-        author: ''
+        author: '',
+        body:''
     });
 
     const handleDescription = (e) => {
@@ -57,11 +58,11 @@ const Create = () => {
 
 
     const createPost = e => {
-        let body = value.replace(/(<([^>]+)>)/gi, "");
+        // let body = value.replace(/(<([^>]+)>)/gi, "");
         e.preventDefault();
-        const data = { ...state, body, userId: myJSON._id, email: myJSON.email }
-        // console.log("state", data);
-        dispatch(createAction(data));
+        // const data = { ...state, body, userId: myJSON._id, email: myJSON.email }
+        // // console.log("state", data);
+        dispatch(createAction(state));
         Navigate('/');
     }
 
@@ -124,12 +125,13 @@ const Create = () => {
 
                                     <div className='group'>
                                         <label htmlFor='body'>Post body</label>
-                                        <ReactQuill
-                                            theme='snow'
-                                            id='body'
+                                        <input
+                                            type='text'
                                             name='body'
-                                            value={value}
-                                            onChange={setValue}
+                                            value={state.body}
+                                            onChange={handleInput}
+                                            placeholder='Post Body...'
+                                            className='group__control'
                                         />
                                     </div>
                                 </div>
