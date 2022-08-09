@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import { useDispatch, useSelector } from 'react-redux';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+
 import { createAction } from '../redux/AsyncAction/PostAction';
 import { useNavigate } from 'react-router-dom';
 import './css/Create.css'
