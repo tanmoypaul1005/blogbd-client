@@ -51,7 +51,7 @@ const Create = () => {
     const auth = localStorage.getItem("user");
     const myJSON = JSON.parse(auth);
 
-    const [value, setValue] = useState('');
+    // const [value, setValue] = useState('');
 
     const Navigate = useNavigate();
 

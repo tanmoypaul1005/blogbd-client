@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
-import ReactQuill from 'react-quill';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { editPost, editPostData } from '../redux/AsyncAction/PostAction';
@@ -11,9 +10,9 @@ const Edit = () => {
         description: '',
         image: '',
         author: '',
-
+        body:''
     });
-    const [value, setValue] = useState('');
+    // const [value, setValue] = useState('');
 
     const handleInput = (e) => {
         setState({
@@ -26,11 +25,11 @@ const Edit = () => {
     console.log("productId", id);
 
     const EditPost = e => {
-        let body = value.replace(/(<([^>]+)>)/gi, "");
+        // let body = value.replace(/(<([^>]+)>)/gi, "");
         e.preventDefault();
-        const data = { ...state, body }
-        console.log("state", data);
-        dispatch(editPost(data, id));
+        // const data = { ...state, body }
+        // console.log("state", data);
+        dispatch(editPost(state, id));
         Navigate('/profile');
     }
 
@@ -111,12 +110,13 @@ const Edit = () => {
 
                                 <div className='group'>
                                     <label htmlFor='body'>Post body</label>
-                                    <ReactQuill
-                                        theme='snow'
-                                        id='body'
+                                    <input
                                         name='body'
-                                        defaultValue={value ? value : post.body}
-                                        onChange={setValue}
+                                        defaultValue={state.body ? state.body : post.body}
+                                        type='text'
+                                        onChange={handleInput}
+                                        placeholder='Post Body...'
+                                        className='group__control'
                                     />
                                 </div>
                             </div>
